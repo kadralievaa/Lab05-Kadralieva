@@ -32,17 +32,48 @@
 //         break;
 // }
 
-// 3
+// // 3
+// Console.WriteLine();
+// int temperature = 50;
+
+// string weather = temperature switch
+// {
+//     < 0 => "Мороз",
+//     >= 0 and <= 14 => "Прохладно",
+//     >= 15 and <= 24 => "Комфортно",
+//     >= 25 and <= 34 => "Жарко",
+//     >= 35 => "Очень жарко"
+// };
+
+// Console.WriteLine(weather);
+
+// // 4
+// Console.WriteLine();
+// string role = "teacher";
+
+// string access = role switch
+// {
+//     "admin" => "Полный доступ",
+//     "teacher" => "Доступ преподавателя",
+//     not "admin" => "Ограниченный доступ"
+// };
+
+// Console.WriteLine(access);
+
+// 4 when
 Console.WriteLine();
-int temperature = 50;
+int age = 20;
+bool hasTicket = true;
 
-string weather = temperature switch
+switch (age)
 {
-    < 0 => "Мороз",
-    >= 0 and <= 14 => "Прохладно",
-    >= 15 and <= 24 => "Комфортно",
-    >= 25 and <= 34 => "Жарко",
-    >= 35 => "Очень жарко"
-};
-
-Console.WriteLine(weather);
+    case >= 18 when hasTicket:
+        Console.WriteLine("Вход разрешён");
+        break;
+    case >= 18:
+        Console.WriteLine("Нет билета");
+        break;
+    default:
+        Console.WriteLine("Возраст не подходит");
+        break;
+}
